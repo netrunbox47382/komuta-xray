@@ -1,0 +1,1 @@
+{"inbounds":[{"listen":"127.0.0.1","port":10002,"protocol":"vless","settings":{"clients":[{"id":"__UUID__"}],"decryption":"none"},"streamSettings":{"network":"ws","wsSettings":{"path":"__WS_PATH__"}}}],"log":{"loglevel":"warning"},"outbounds":[{"protocol":"freedom"}]}
