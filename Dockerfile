@@ -8,5 +8,7 @@ COPY --from=xray-src /usr/local/bin/xray /usr/local/bin/xray
 COPY --chmod=644 config.json.template /usr/local/etc/xray/config.json.template
 COPY --chmod=644 nginx.conf.template /etc/nginx/nginx.conf.template
 COPY --chmod=644 index.html /var/www/html/index.html
+# nginx workers run as an unprivileged user; make the decoy world-readable.
+RUN chmod -R a+rX /var/www/html
 COPY --chmod=755 entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
